@@ -1,0 +1,7 @@
+supplier,amount_cents,delay_days
+Fornecedor-demo-A,120000,0
+Fornecedor-demo-A,140000,2
+Fornecedor-demo-B,80000,0
+Fornecedor-demo-B,90000,0
+Fornecedor-demo-C,60000,4
+Fornecedor-demo-C,70000,0

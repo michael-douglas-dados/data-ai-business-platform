@@ -1,0 +1,9 @@
+name: business_workbench
+version: '1.0.0'
+config-version: 2
+profile: business_workbench
+model-paths: ["models"]
+test-paths: ["tests"]
+models:
+  business_workbench:
+    +materialized: table

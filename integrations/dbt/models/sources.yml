@@ -1,0 +1,16 @@
+version: 2
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: customers
+      - name: orders
+models:
+  - name: customer_metrics
+    columns:
+      - name: customer_id
+        data_tests: [unique, not_null]
+  - name: monthly_revenue
+    columns:
+      - name: month
+        data_tests: [unique, not_null]

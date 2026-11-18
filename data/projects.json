@@ -1,0 +1,246 @@
+[
+  {
+    "id": "crm",
+    "title": "CRM e funil comercial",
+    "domain": "Comercial",
+    "description": "Clientes, oportunidades e mudança de etapa com controle de concorrência.",
+    "tools": [
+      "React",
+      "TypeScript",
+      "FastAPI",
+      "SQL"
+    ],
+    "endpoint": "/api/deals",
+    "code": "app/api.py"
+  },
+  {
+    "id": "etl",
+    "title": "ETL de pedidos",
+    "domain": "Operações",
+    "description": "Ingestão CSV, transformação monetária e histórico de carga.",
+    "tools": [
+      "Python",
+      "SQL"
+    ],
+    "endpoint": "/api/operations",
+    "code": "app/pipeline.py"
+  },
+  {
+    "id": "quality",
+    "title": "Validação de dados",
+    "domain": "Governança",
+    "description": "Validação de schema, chaves, duplicidades, valores e datas com motivos de rejeição.",
+    "tools": [
+      "Python",
+      "Pydantic"
+    ],
+    "endpoint": "/api/operations",
+    "code": "app/pipeline.py"
+  },
+  {
+    "id": "incremental",
+    "title": "Carga incremental versionada",
+    "domain": "Engenharia de dados",
+    "description": "Reprocessamento idempotente e atualização somente por versões mais recentes.",
+    "tools": [
+      "Python",
+      "SQLite"
+    ],
+    "endpoint": "/api/operations",
+    "code": "app/pipeline.py"
+  },
+  {
+    "id": "warehouse",
+    "title": "Modelo analítico de receita",
+    "domain": "Analytics Engineering",
+    "description": "Agregação mensal de receita e volume para consumo por indicadores.",
+    "tools": [
+      "SQL",
+      "dbt"
+    ],
+    "endpoint": "/api/overview",
+    "code": "app/analytics.py"
+  },
+  {
+    "id": "reconciliation",
+    "title": "Conciliação de indicadores",
+    "domain": "Financeiro",
+    "description": "Conferência entre total da base e agregação por cliente em centavos.",
+    "tools": [
+      "Python",
+      "SQL"
+    ],
+    "endpoint": "/api/reconcile",
+    "code": "app/pipeline.py"
+  },
+  {
+    "id": "segmentation",
+    "title": "Segmentação por comportamento",
+    "domain": "CRM e Growth",
+    "description": "Audiências por frequência e recência com consentimento explícito.",
+    "tools": [
+      "SQL",
+      "Python",
+      "React"
+    ],
+    "endpoint": "/api/customers",
+    "code": "app/analytics.py"
+  },
+  {
+    "id": "retention",
+    "title": "Retenção por coortes",
+    "domain": "Produtos e assinaturas",
+    "description": "Coortes por mês da primeira compra com meses de atividade zero preservados.",
+    "tools": [
+      "Python",
+      "SQL"
+    ],
+    "endpoint": "/api/cohorts",
+    "code": "app/analytics.py"
+  },
+  {
+    "id": "campaigns",
+    "title": "Preparação de campanhas",
+    "domain": "Marketing",
+    "description": "Fila idempotente de clientes elegíveis com etapa de revisão humana.",
+    "tools": [
+      "Python",
+      "SQL",
+      "n8n"
+    ],
+    "endpoint": "/api/campaigns",
+    "code": "app/analytics.py"
+  },
+  {
+    "id": "anomalies",
+    "title": "Detecção de valores atípicos",
+    "domain": "Auditoria",
+    "description": "Isolation Forest aponta pedidos para revisão com semente reproduzível.",
+    "tools": [
+      "scikit-learn",
+      "Python"
+    ],
+    "endpoint": "/api/anomalies",
+    "code": "app/analytics.py"
+  },
+  {
+    "id": "documents",
+    "title": "Ingestão de conhecimento",
+    "domain": "Operações e suporte",
+    "description": "Documentos divididos em trechos com identificador e fonte rastreável.",
+    "tools": [
+      "Python"
+    ],
+    "endpoint": "/api/knowledge",
+    "code": "app/knowledge.py"
+  },
+  {
+    "id": "retrieval",
+    "title": "Busca de conhecimento",
+    "domain": "Engenharia de IA",
+    "description": "Recuperação lexical TF-IDF com pontuação e limiar para ausência de resultado.",
+    "tools": [
+      "scikit-learn",
+      "FastAPI"
+    ],
+    "endpoint": "/api/search",
+    "code": "app/knowledge.py"
+  },
+  {
+    "id": "evaluation",
+    "title": "Avaliação de recuperação",
+    "domain": "Engenharia de IA",
+    "description": "Conjunto de referência com Recall@3, MRR e latência por pergunta.",
+    "tools": [
+      "Python",
+      "scikit-learn"
+    ],
+    "endpoint": "/api/evaluations",
+    "code": "app/knowledge.py"
+  },
+  {
+    "id": "investigation",
+    "title": "Investigação com ferramentas",
+    "domain": "Operações de dados",
+    "description": "Workflow determinístico combina conciliação, indicadores e busca com trilha de execução.",
+    "tools": [
+      "Python",
+      "FastAPI"
+    ],
+    "endpoint": "/api/investigate",
+    "code": "app/knowledge.py"
+  },
+  {
+    "id": "observability",
+    "title": "Observabilidade de cargas",
+    "domain": "DataOps",
+    "description": "Histórico de duração, linhas aceitas/rejeitadas e trilha de alterações.",
+    "tools": [
+      "Python",
+      "SQL",
+      "Airflow"
+    ],
+    "endpoint": "/api/operations",
+    "code": "app/api.py"
+  },
+  {
+    "id": "procurement",
+    "title": "Análise de fornecedores",
+    "domain": "Compras",
+    "description": "Concentração de gastos e taxa de entregas no prazo por fornecedor sintético.",
+    "tools": [
+      "Python",
+      "CSV"
+    ],
+    "endpoint": "/api/procurement",
+    "code": "app/sectors.py"
+  },
+  {
+    "id": "workforce",
+    "title": "Indicadores agregados de RH",
+    "domain": "People Analytics",
+    "description": "Custos e ausência ponderada por horas previstas em dados sintéticos.",
+    "tools": [
+      "Python",
+      "CSV"
+    ],
+    "endpoint": "/api/workforce",
+    "code": "app/sectors.py"
+  },
+  {
+    "id": "forecast",
+    "title": "Projeção de receita",
+    "domain": "Planejamento financeiro",
+    "description": "Baseline de média móvel com backtest temporal e erro absoluto médio.",
+    "tools": [
+      "Python"
+    ],
+    "endpoint": "/api/forecast",
+    "code": "app/sectors.py"
+  },
+  {
+    "id": "scoring",
+    "title": "Priorização comercial explicável",
+    "domain": "Vendas",
+    "description": "Pontuação por regras com justificativas e bloqueio por ausência de consentimento.",
+    "tools": [
+      "Python",
+      "SQL"
+    ],
+    "endpoint": "/api/lead-scores",
+    "code": "app/sectors.py"
+  },
+  {
+    "id": "exports",
+    "title": "Contrato de dados para BI",
+    "domain": "BI e integrações",
+    "description": "Exportação de métricas de clientes em CSV com colunas fixas e valores em centavos.",
+    "tools": [
+      "FastAPI",
+      "CSV",
+      "SQL"
+    ],
+    "endpoint": "/api/export/customers",
+    "code": "app/api.py"
+  }
+]

@@ -1,0 +1,73 @@
+{
+  "name": "Portfolio - preparar audiencia para revisao",
+  "active": false,
+  "nodes": [
+    {
+      "id": "manual",
+      "name": "Executar manualmente",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "prepare",
+      "name": "Preparar audiencia",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        240,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "http://host.docker.internal:8088/api/campaigns/prepare",
+        "options": {}
+      }
+    },
+    {
+      "id": "preview",
+      "name": "Consultar fila para revisao",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        0
+      ],
+      "parameters": {
+        "url": "http://host.docker.internal:8088/api/campaigns",
+        "options": {}
+      }
+    }
+  ],
+  "connections": {
+    "Executar manualmente": {
+      "main": [
+        [
+          {
+            "node": "Preparar audiencia",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar audiencia": {
+      "main": [
+        [
+          {
+            "node": "Consultar fila para revisao",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
