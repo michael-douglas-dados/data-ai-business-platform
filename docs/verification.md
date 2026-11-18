@@ -15,3 +15,7 @@ Conferido em 18/11/2026.
 As métricas de busca usam quatro perguntas sintéticas. A projeção é baseline de média móvel com backtest e meses sem receita preenchidos com zero. Esses resultados não estimam desempenho produtivo.
 
 A contagem representa 20 casos integrados com reutilização de componentes, CLI e documentação individuais.
+
+## Integração contínua
+
+A configuração está em docs/github-actions.example.yml. O GitHub recusou a criação do workflow por ausência da permissão workflow na credencial. Os testes registrados acima foram executados localmente.
